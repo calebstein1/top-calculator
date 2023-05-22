@@ -16,9 +16,13 @@ const calc = () => {
 
 function getInput(input) {
     switch (input) {
-        case "<":
+        case "C":
             calcStack.length = 0;
             calcDisplay.textContent = "0";
+            histDisplay.textContent = "";
+            break;
+        case "^":
+            calcDisplay.textContent = calcStack.pop();
             histDisplay.textContent = "";
             break;
         case "+":
