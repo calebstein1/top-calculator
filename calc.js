@@ -24,7 +24,14 @@ function getInput(input) {
         case "<":
             calcDisplay.textContent = calcDisplay.textContent.substring(0, calcDisplay.textContent.length - 1);
             break;
+        case "Backspace":
+            calcDisplay.textContent = calcDisplay.textContent.substring(0, calcDisplay.textContent.length - 1);
+            break;
         case "^":
+            calcDisplay.textContent = calcStack.pop();
+            histDisplay.textContent = "";
+            break;
+        case "ArrowUp":
             calcDisplay.textContent = calcStack.pop();
             histDisplay.textContent = "";
             break;
@@ -60,6 +67,10 @@ function getInput(input) {
             calc();
             histDisplay.textContent = "";
             break;
+        case "Enter":
+            calc();
+            histDisplay.textContent = "";
+            break;
         case ".":
             calcDisplay.textContent.includes(".")
                 ? null
@@ -75,6 +86,6 @@ function getInput(input) {
 
 }
 
-window.addEventListener("keypress", (event) => getInput(event.key));
+window.addEventListener("keydown", (event) => {event.preventDefault(); getInput(event.key)});
 
 document.querySelectorAll("button").forEach(button => button.addEventListener("click", () => getInput(button.textContent)));
