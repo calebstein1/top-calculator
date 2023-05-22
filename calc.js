@@ -36,10 +36,6 @@ function getInput(input) {
 
 }
 
-window.addEventListener("keypress", (event) => {
-    getInput(event.key);
-});
+window.addEventListener("keypress", (event) => getInput(event.key));
 
-document.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
-    getInput(button.textContent);
-}));
+document.querySelectorAll("button").forEach(button => button.addEventListener("click", () => getInput(button.textContent)));
