@@ -21,6 +21,9 @@ function getInput(input) {
             calcDisplay.textContent = "0";
             histDisplay.textContent = "";
             break;
+        case "<":
+            calcDisplay.textContent = calcDisplay.textContent.substring(0, calcDisplay.textContent.length - 1);
+            break;
         case "^":
             calcDisplay.textContent = calcStack.pop();
             histDisplay.textContent = "";
