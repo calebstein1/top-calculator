@@ -1,0 +1,38 @@
+body {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+.calc-container, .display {
+    border: solid black 1px;
+}
+.calc-container {
+    flex-direction: column;
+    display: flex;
+}
+.display {
+    width: 200px;
+    height: 50px;
+    margin: 8px;
+    justify-content: flex-end;
+    display: flex;
+}
+.buttons-container {
+    margin: 8px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    display: flex;
+}
+.button-row {
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+}
+button {
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
